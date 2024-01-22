@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.scroll-arrow {
+    position: relative;
+    animation: scroll-arrow 3s linear infinite;
+  }
+
+  @keyframes scroll-arrow {
+    0% {
+      top: 0;
+    }
+    50% {
+      top: 30px;
+    }
+    100% {
+      top: 0;
+    }
+  }
