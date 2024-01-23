@@ -51,7 +51,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to={"/singin"}>
+                    <Link to={"/signin"}>
                         <button className="py-2 px-4 font-medium rounded-md bg-[#F89A20] text-white uppercase">
                             sign in
                         </button>

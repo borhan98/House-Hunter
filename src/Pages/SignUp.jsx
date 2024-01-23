@@ -1,21 +1,50 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/HouseHunterLogo2.png";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
+import toast from "react-hot-toast";
 
 
 const SignUp = () => {
     const [showPass, setShowPass] = useState(true);
-
+    const axiosSecure = useAxiosSecure();
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
 
-    const onSubmit = data => {
-        console.log(data);
+    const onSubmit = userInfo => {
+        axiosSecure.post("/register", userInfo)
+            .then(res => {
+                if (res.data.insertedId) {
+                    toast('Registration Succesfull!',
+                        {
+                            icon: '👏',
+                            style: {
+                                borderRadius: '10px',
+                                background: '#333',
+                                color: '#fff',
+                            },
+                        }
+                    );
+                    navigate('/signin');
+                } else {
+                    toast.error(`${res.data.message}, Please login`,
+                        {
+                            style: {
+                                borderRadius: '10px',
+                                background: '#333',
+                                color: '#fff',
+                            }
+                        }
+                    );
+                    navigate('/signin');
+                }
+            })
     }
 
     return (
@@ -121,7 +150,7 @@ const SignUp = () => {
                         {/* Redirect to Register page */}
                         <p className="text-center mt-6">
                             Already have an account?{" "}
-                            <Link to={"/singin"} className="text-[#F89A20] font-bold underline">
+                            <Link to={"/signin"} className="text-[#F89A20] font-bold underline">
                                 Sign In Now
                             </Link>
                         </p>
