@@ -36,7 +36,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className=" fixed w-full shadow-md">
+        <div className="bg-[#00000048] fixed w-full shadow-md">
             <div className="container mx-auto px-2 lg:px-0 navbar py-4">
                 <div className="navbar-start">
                     <div className="dropdown">

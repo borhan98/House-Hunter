@@ -5,9 +5,9 @@ import { SlSizeFullscreen } from "react-icons/sl";
 import { FaBangladeshiTakaSign, FaLocationDot } from "react-icons/fa6";
 
 
-
 const House = ({ house }) => {
-    const { name, bedrooms, bathrooms, room_size, rent_per_month, availability_date, city, address, photo, phone, description } = house;
+    const { _id, name, bedrooms, bathrooms, room_size, rent_per_month, availability_date, city, address, photo, phone, description } = house;
+
     return (
         <div className="grid gap-6 md:grid-cols-2 rounded-md overflow-hidden p-6 border shadow-md">
             <figure className="w-full">
@@ -49,7 +49,7 @@ const House = ({ house }) => {
                     </div>
                 </div>
                 <div className="divider"></div>
-                <Link>
+                <Link to={`/book/${_id}`}>
                     <button className="bg-[#F89A20] py-2 px-3 rounded-md text-white uppercase font-medium">Book Now</button>
                 </Link>
             </div>

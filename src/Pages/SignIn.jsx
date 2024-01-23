@@ -13,7 +13,6 @@ const SignIn = () => {
     const axiosPublic = useAxiosPublic();
     const { setUser } = useAuth();
     const navigate = useNavigate();
-
     const {
         register,
         handleSubmit,

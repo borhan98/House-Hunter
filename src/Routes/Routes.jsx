@@ -6,6 +6,7 @@ import SignUp from "../Pages/SignUp";
 import Dashboard from "../Layouts/Dashboard";
 import AddHouse from "../DashboardPages/AddHouse/AddHouse";
 import MyHouses from "../DashboardPages/MyHouses/MyHouses";
+import Book from "../Pages/Home/Book";
 
 
 export const routes = createBrowserRouter([
@@ -17,6 +18,11 @@ export const routes = createBrowserRouter([
                 index: true,
                 element: <Home />
             },
+            {
+                path: "book/:id",
+                element: <Book />,
+                loader: ({ params }) => fetch(`http://localhost:5000/houses/${params.id}`)
+            }
         ]
     },
     {
