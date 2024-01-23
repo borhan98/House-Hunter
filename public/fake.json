@@ -2,22 +2,22 @@
     {
         "name": "Cozy Cottage Retreat",
         "address": "123 Maple Street",
-        "city": "Cityville",
-        "bedrooms": 2,
-        "bathrooms": 1,
+        "city": "Dhaka",
+        "bedrooms": 3,
+        "bathrooms": 2,
         "room_size": "Medium",
-        "photo": "cottage_photo.jpg",
+        "photo": "https://i.ibb.co/n65G3jF/house1.jpg",
         "availability_date": "2024-03-01",
-        "rent_per_month": 1200,
+        "rent_per_month": 5000,
         "phone": "555-1234",
         "description": "A charming cottage with a beautiful garden, perfect for a peaceful retreat.",
-        "email": "cozycottage@example.com",
-        "user_name": "cottager"
+        "email": "john@doe.com",
+        "user_name": "John Doe"
     },
     {
         "name": "Modern Urban Loft",
         "address": "456 Oak Avenue",
-        "city": "Metro City",
+        "city": "Khulna",
         "bedrooms": 3,
         "bathrooms": 2,
         "room_size": "Large",
@@ -26,13 +26,13 @@
         "rent_per_month": 2000,
         "phone": "555-5678",
         "description": "Sleek and stylish loft with skyline views, ideal for city living.",
-        "email": "urbanloft@example.com",
-        "user_name": "urbanite"
+        "email": "john@doe.com",
+        "user_name": "John Doe"
     },
     {
         "name": "Rustic Mountain Cabin",
         "address": "789 Pine Trail",
-        "city": "Mountainville",
+        "city": "Rajshahi",
         "bedrooms": 1,
         "bathrooms": 1,
         "room_size": "Small",
@@ -41,13 +41,13 @@
         "rent_per_month": 800,
         "phone": "555-9101",
         "description": "A cozy cabin nestled in the mountains, perfect for nature lovers.",
-        "email": "mountaincabin@example.com",
-        "user_name": "mountaineer"
+        "email": "john@doe.com",
+        "user_name": "John Doe"
     },
     {
         "name": "Sunny Beach House",
         "address": "987 Ocean Boulevard",
-        "city": "Beachtown",
+        "city": "Rangpur",
         "bedrooms": 4,
         "bathrooms": 2,
         "room_size": "Large",
@@ -56,13 +56,13 @@
         "rent_per_month": 2500,
         "phone": "555-1111",
         "description": "A spacious beachfront house with stunning ocean views and direct access to the beach.",
-        "email": "beachhouse@example.com",
-        "user_name": "beachlover"
+        "email": "john@doe.com",
+        "user_name": "John Doe"
     },
     {
         "name": "Country Estate Retreat",
         "address": "321 Meadow Lane",
-        "city": "Countryside",
+        "city": "Dhaka",
         "bedrooms": 5,
         "bathrooms": 3,
         "room_size": "Extra Large",
@@ -71,13 +71,13 @@
         "rent_per_month": 3000,
         "phone": "555-2222",
         "description": "A luxurious estate surrounded by nature, offering tranquility and elegance.",
-        "email": "countryestate@example.com",
-        "user_name": "countrylord"
+        "email": "john@doe.com",
+        "user_name": "John Doe"
     },
     {
         "name": "City Chic Apartment",
         "address": "654 Highrise Street",
-        "city": "Metro City",
+        "city": "Cumilla",
         "bedrooms": 2,
         "bathrooms": 1,
         "room_size": "Medium",
@@ -86,13 +86,13 @@
         "rent_per_month": 1800,
         "phone": "555-3333",
         "description": "A stylish apartment in the heart of the city, close to all amenities and entertainment.",
-        "email": "citychic@example.com",
-        "user_name": "citydweller"
+        "email": "john@doe.com",
+        "user_name": "John Doe"
     },
     {
         "name": "Lakeview Cabin Retreat",
         "address": "147 Pine Cove",
-        "city": "Laketown",
+        "city": "Barisal",
         "bedrooms": 3,
         "bathrooms": 2,
         "room_size": "Large",
@@ -101,8 +101,8 @@
         "rent_per_month": 1500,
         "phone": "555-4444",
         "description": "A cabin by the lake, perfect for fishing, kayaking, and enjoying serene sunsets.",
-        "email": "lakeviewcabin@example.com",
-        "user_name": "lakeadventurer"
+        "email": "john@doe.com",
+        "user_name": "John Doe"
     },
     {
         "name": "Downtown Studio Loft",
@@ -116,8 +116,8 @@
         "rent_per_month": 1200,
         "phone": "555-5555",
         "description": "A trendy studio loft in the heart of the city, perfect for urban living.",
-        "email": "downtownloft@example.com",
-        "user_name": "urbanite2"
+        "email": "john@doe.com",
+        "user_name": "John Doe"
     },
     {
         "name": "Hillside Retreat",
@@ -131,8 +131,8 @@
         "rent_per_month": 1800,
         "phone": "555-6666",
         "description": "A peaceful retreat on a hillside, surrounded by lush greenery and scenic views.",
-        "email": "hillside@example.com",
-        "user_name": "naturelover"
+        "email": "john@doe.com",
+        "user_name": "John Doe"
     },
     {
         "name": "Modern Suburban House",
@@ -146,8 +146,8 @@
         "rent_per_month": 2200,
         "phone": "555-7777",
         "description": "A spacious and modern house in a quiet suburban neighborhood, ideal for families.",
-        "email": "suburbanhouse@example.com",
-        "user_name": "suburbanite"
+        "email": "john@doe.com",
+        "user_name": "John Doe"
     },
     {
         "name": "Riverside Cabin Getaway",
@@ -161,8 +161,8 @@
         "rent_per_month": 1300,
         "phone": "555-8888",
         "description": "A cozy cabin by the river, offering a peaceful escape with fishing and canoeing nearby.",
-        "email": "riversidecabin@example.com",
-        "user_name": "riverexplorer"
+        "email": "john@doe.com",
+        "user_name": "John Doe"
     },
     {
         "name": "Historic Townhouse",
@@ -176,7 +176,13 @@
         "rent_per_month": 2000,
         "phone": "555-9999",
         "description": "A charming townhouse with historical charm and modern conveniences.",
-        "email": "historictownhouse@example.com",
-        "user_name": "historybuff"
+        "email": "john@doe.com",
+        "user_name": "John Doe"
     }
 ]
+
+https://i.ibb.co/cNvwt52/house7.jpg
+https://i.ibb.co/FVSt46v/house6.jpg
+
+
+

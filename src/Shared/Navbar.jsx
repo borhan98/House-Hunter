@@ -4,7 +4,12 @@ import useAuth from "../Hooks/useAuth";
 
 
 const Navbar = () => {
-    const { user } = useAuth();
+    const { user, setUser } = useAuth();
+
+    const handleLogout = () => {
+        localStorage.removeItem("access-token");
+        setUser(null);
+    }
 
     const activeRoute = ({ isActive }) =>
         isActive
@@ -16,11 +21,6 @@ const Navbar = () => {
             <li>
                 <NavLink className={activeRoute} to={"/"}>
                     Home
-                </NavLink>
-            </li>
-            <li>
-                <NavLink className={activeRoute} to={"/signin"}>
-                    sign in
                 </NavLink>
             </li>
             {
@@ -67,9 +67,9 @@ const Navbar = () => {
                             <button className="py-2 px-4 rounded-md bg-[#F89A20] text-white uppercase">
                                 sign in
                             </button>
-                        </Link> : <Link to={"/dashboard"}>
-                            <button className="py-2 px-4 rounded-md bg-[#F89A20] text-white uppercase">
-                                dashboard
+                        </Link> : <Link to={"/"}>
+                            <button onClick={handleLogout} className="py-2 px-4 rounded-md bg-[#F89A20] text-white uppercase">
+                                log out
                             </button>
                         </Link>
                     }

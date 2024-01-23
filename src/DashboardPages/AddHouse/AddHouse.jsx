@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import toast from "react-hot-toast";
 
 
 const image_api_key = import.meta.env.VITE_IMAGE_API_KEY;
@@ -21,23 +22,45 @@ const AddHouse = () => {
     } = useForm();
 
     // Handle add new house
-    const onSubmit = (houseInfo) => {
+    const onSubmit = (houseInfo, e) => {
         // Upload image to image server
         const image_file = { image: houseInfo.photo[0] };
         axiosPublic.post(image_api, image_file, {
             headers: { "Content-Type": "multipart/form-data" }
         }).then(res => {
             if (res.data.success) {
-                // eslint-disable-next-line no-unused-vars
-                const { photo, ...newHouse } = houseInfo;
-                newHouse.photo = res.data.data.display_url;
-                newHouse.email = user?.email;
-                newHouse.user_name = user?.name;
+                const newHouse = {
+                    name: houseInfo.name,
+                    address: houseInfo.address,
+                    city: houseInfo.city,
+                    bedrooms: parseInt(houseInfo.bedrooms),
+                    bathrooms: parseInt(houseInfo.bathrooms),
+                    room_size: houseInfo.room_size,
+                    availability_date: houseInfo.availability_date,
+                    rent_per_month: parseFloat(houseInfo.rent_per_month),
+                    phone: houseInfo.phone,
+                    description: houseInfo.description,
+                    photo: res.data.data.display_url,
+                    email: user?.email,
+                    user_name: user?.name
+                }
 
                 // Upload a new house
                 axiosSecure.post("/houses", newHouse)
                     .then(res => {
                         console.log(res.data);
+                        if (res.data.insertedId) {
+                            toast.success('Successfully added the house!',
+                                {
+                                    style: {
+                                        borderRadius: '10px',
+                                        background: '#333',
+                                        color: '#fff',
+                                    },
+                                }
+                            );
+                            e.target.reset();
+                        }
                     })
             }
         })
