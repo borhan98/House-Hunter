@@ -40,7 +40,7 @@ const Navbar = () => {
                         {/* Website Logo */}
                         <Link>
                             <figure>
-                                <img className="w-7 md:w-9 lg:w-40" src={HouseHunterLogo} alt="Logo" />
+                                <img className="w-20 md:w-28 lg:w-40" src={HouseHunterLogo} alt="Logo" />
                             </figure>
                         </Link>
                     </div>
@@ -51,7 +51,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to={"/login"}>
+                    <Link to={"/singin"}>
                         <button className="py-2 px-4 font-medium rounded-md bg-[#F89A20] text-white uppercase">
                             sign in
                         </button>
