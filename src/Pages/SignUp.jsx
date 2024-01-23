@@ -3,13 +3,13 @@ import { useForm } from "react-hook-form";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/HouseHunterLogo2.png";
-import useAxiosSecure from "../Hooks/useAxiosSecure";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 import toast from "react-hot-toast";
 
 
 const SignUp = () => {
     const [showPass, setShowPass] = useState(true);
-    const axiosSecure = useAxiosSecure();
+    const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
     const {
         register,
@@ -17,13 +17,13 @@ const SignUp = () => {
         formState: { errors },
     } = useForm();
 
+    // Handle user registration
     const onSubmit = userInfo => {
-        axiosSecure.post("/register", userInfo)
+        axiosPublic.post("/register", userInfo)
             .then(res => {
                 if (res.data.insertedId) {
-                    toast('Registration Succesfull!',
+                    toast.success('Registration Succesfull!, Please Login',
                         {
-                            icon: '👏',
                             style: {
                                 borderRadius: '10px',
                                 background: '#333',

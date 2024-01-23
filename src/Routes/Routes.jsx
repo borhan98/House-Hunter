@@ -3,6 +3,7 @@ import Main from "../Layouts/Main";
 import Home from "../Pages/Home/Home";
 import SignIn from "../Pages/SignIn";
 import SignUp from "../Pages/SignUp";
+import Dashboard from "../Layouts/Dashboard";
 
 
 export const routes = createBrowserRouter([
@@ -23,5 +24,9 @@ export const routes = createBrowserRouter([
     {
         path: "register",
         element: <SignUp />
+    },
+    {
+        path: "dashboard",
+        element: <Dashboard />
     }
 ])

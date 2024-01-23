@@ -2,11 +2,17 @@ import { useForm } from "react-hook-form";
 import logo from "../assets/HouseHunterLogo2.png";
 import { useState } from "react";
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
+import useAuth from "../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 
 const SignIn = () => {
     const [showPass, setShowPass] = useState(true);
+    const axiosPublic = useAxiosPublic();
+    const { setUser } = useAuth();
+    const navigate = useNavigate();
 
     const {
         register,
@@ -14,8 +20,35 @@ const SignIn = () => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = data => {
-        console.log(data);
+    const onSubmit = userInfo => {
+        axiosPublic.post("/login", userInfo)
+            .then(res => {
+                // console.log(res.data);
+                if (res?.data?.token) {
+                    localStorage.setItem('access-token', res.data.token);
+                    setUser(res.data.user);
+                    navigate("/dashboard")
+                    toast.success('Login Succesfull!',
+                        {
+                            style: {
+                                borderRadius: '10px',
+                                background: '#333',
+                                color: '#fff',
+                            },
+                        }
+                    );
+                } else if (res.data.message) {
+                    toast.error(`${res.data.message}`,
+                        {
+                            style: {
+                                borderRadius: '10px',
+                                background: '#333',
+                                color: '#fff',
+                            },
+                        }
+                    );
+                }
+            })
     }
 
     return (

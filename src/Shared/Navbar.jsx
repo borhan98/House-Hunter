@@ -1,8 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import HouseHunterLogo from "../assets/HouseHunterLogo2.png";
+import useAuth from "../Hooks/useAuth";
 
 
 const Navbar = () => {
+    const { user } = useAuth();
 
     const activeRoute = ({ isActive }) =>
         isActive
@@ -17,10 +19,19 @@ const Navbar = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink className={activeRoute} to={"/signup"}>
-                    sign up
+                <NavLink className={activeRoute} to={"/signin"}>
+                    sign in
                 </NavLink>
             </li>
+            {
+                user && <>
+                    <li>
+                        <NavLink className={activeRoute} to={"/dashboard"}>
+                            Dashboard
+                        </NavLink>
+                    </li>
+                </>
+            }
         </>
     );
 
@@ -51,11 +62,17 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to={"/signin"}>
-                        <button className="py-2 px-4 font-medium rounded-md bg-[#F89A20] text-white uppercase">
-                            sign in
-                        </button>
-                    </Link>
+                    {
+                        !user ? <Link to={"/signin"}>
+                            <button className="py-2 px-4 rounded-md bg-[#F89A20] text-white uppercase">
+                                sign in
+                            </button>
+                        </Link> : <Link to={"/dashboard"}>
+                            <button className="py-2 px-4 rounded-md bg-[#F89A20] text-white uppercase">
+                                dashboard
+                            </button>
+                        </Link>
+                    }
                 </div>
             </div>
         </div>
