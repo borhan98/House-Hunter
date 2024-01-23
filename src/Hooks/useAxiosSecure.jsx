@@ -24,6 +24,10 @@ const useAxiosSecure = () => {
             return response;
         }, (err) => {
             console.log("Error occured when getting response", err);
+            const status = err.response.status;
+            if (status === 403 || status === 401) {
+                localStorage.removeItem('access-token');
+            }
         }
     )
 

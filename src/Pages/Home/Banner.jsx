@@ -3,7 +3,7 @@ import { HiOutlineArrowLongDown } from "react-icons/hi2";
 
 const Banner = () => {
     return (
-        <div className="hero h-[100vh]" style={{ backgroundImage: 'url(https://i.ibb.co/D4dLZhM/banner-bg2.jpg)' }}>
+        <div className="hero h-[100vh] min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/D4dLZhM/banner-bg2.jpg)' }}>
             <div className="hero-overlay bg-opacity-90"></div>
             <div className="text-center text-neutral-content">
                 <div className="max-w-md">

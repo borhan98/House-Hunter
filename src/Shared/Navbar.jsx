@@ -26,7 +26,7 @@ const Navbar = () => {
             {
                 user && <>
                     <li>
-                        <NavLink className={activeRoute} to={"/dashboard"}>
+                        <NavLink className={activeRoute} to={user?.role === "owner" ? "/dashboard/myHouses" : "/dashboard/myBookings"}>
                             Dashboard
                         </NavLink>
                     </li>
