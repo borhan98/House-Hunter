@@ -26,7 +26,11 @@ const SignIn = () => {
                 if (res?.data?.token) {
                     localStorage.setItem('access-token', res.data.token);
                     setUser(res.data.user);
-                    navigate("/dashboard")
+                    if (res.data.user?.role === "renter") {
+                        navigate("/dashboard/myBookings")
+                    } else {
+                        navigate("/dashboard/myHouses")
+                    }
                     toast.success('Login Succesfull!',
                         {
                             style: {

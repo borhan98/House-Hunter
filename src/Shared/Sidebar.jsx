@@ -45,8 +45,8 @@ const Sidebar = () => {
                 ) : (
                     <>
                         <li>
-                            <NavLink className={activeRoute} to={"/dashboard/myprofile"}>
-                                <FaUser /> <span className="hidden md:block">My Profile</span>
+                            <NavLink className={activeRoute} to={"/dashboard/myBookings"}>
+                                <FaUser /> <span className="">My Bookings</span>
                             </NavLink>
                         </li>
                     </>

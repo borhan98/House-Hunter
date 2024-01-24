@@ -7,6 +7,7 @@ import Dashboard from "../Layouts/Dashboard";
 import AddHouse from "../DashboardPages/AddHouse/AddHouse";
 import MyHouses from "../DashboardPages/MyHouses/MyHouses";
 import Book from "../Pages/Home/Book";
+import MyBookings from "../DashboardPages/MyBookings/MyBookings";
 
 
 export const routes = createBrowserRouter([
@@ -44,6 +45,10 @@ export const routes = createBrowserRouter([
             {
                 path: "addHouse",
                 element: <AddHouse />
+            },
+            {
+                path: "myBookings",
+                element: <MyBookings />
             }
         ]
     }
