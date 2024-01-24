@@ -32,6 +32,18 @@ const Book = () => {
                 }
             );
         }
+        if (user?.role === "owner") {
+            return toast.error('You can\'t book houce, because yor are an owner!',
+                {
+                    style: {
+                        borderRadius: '10px',
+                        background: '#333',
+                        color: '#fff',
+                    },
+                }
+            );
+        }
+        
         const bookingHouse = {
             user_name: user?.name,
             email: user?.email,

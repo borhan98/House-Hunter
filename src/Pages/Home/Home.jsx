@@ -1,3 +1,4 @@
+import Footer from "../../Shared/Footer";
 import AllHouses from "./AllHouses";
 import Banner from "./Banner";
 
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <Banner />
             <AllHouses />
+            <Footer />
         </div>
     );
 };

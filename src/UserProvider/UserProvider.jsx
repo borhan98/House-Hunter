@@ -13,7 +13,6 @@ const UserProvider = ({ children }) => {
         axiosSecure.get("/user")
             .then(res => {
                 setUser(res.data)
-                console.log(res.data);
             })
     }, [axiosSecure])
 
