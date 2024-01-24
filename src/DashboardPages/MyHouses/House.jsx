@@ -5,6 +5,7 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 
 const House = ({ house, index, refetch }) => {
@@ -49,7 +50,9 @@ const House = ({ house, index, refetch }) => {
             <td className="flex"><FaBangladeshiTakaSign />{rent_per_month}</td>
             <td>{address}, {city} </td>
             <td className="flex gap-6">
-                <button className="bg-[#F89A20] text-white text-2xl p-2"><FaRegEdit /></button>
+                <Link to={`/dashboard/editHouse/${_id}`}>
+                    <button className="bg-[#F89A20] text-white text-2xl p-2"><FaRegEdit /></button>
+                </Link>
                 <button onClick={handleDelete} className="bg-[#F89A20] text-white text-2xl p-2"><RiDeleteBin5Line /></button>
             </td>
         </tr>

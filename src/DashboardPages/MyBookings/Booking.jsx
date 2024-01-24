@@ -9,7 +9,6 @@ const Booking = ({index, book}) => {
         //     <td>
                 
         //     </td>
-        //     <td>{""}</td>
         // </tr>
     );
 };

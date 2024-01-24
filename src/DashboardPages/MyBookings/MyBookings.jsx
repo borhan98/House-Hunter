@@ -38,7 +38,6 @@ const MyBookings = () => {
                         <th>Name</th>
                         <th>Email</th>
                         <th>Role</th>
-                        <th>Membership</th>
                     </tr>
                 </thead>
                 <tbody>

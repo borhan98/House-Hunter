@@ -8,6 +8,7 @@ import AddHouse from "../DashboardPages/AddHouse/AddHouse";
 import MyHouses from "../DashboardPages/MyHouses/MyHouses";
 import Book from "../Pages/Home/Book";
 import MyBookings from "../DashboardPages/MyBookings/MyBookings";
+import EditHouse from "../DashboardPages/MyHouses/EditHouse";
 
 
 export const routes = createBrowserRouter([
@@ -41,6 +42,11 @@ export const routes = createBrowserRouter([
             {
                 path: "myHouses",
                 element: <MyHouses />
+            },
+            {
+                path: "editHouse/:id",
+                element: <EditHouse />,
+                loader: ({params}) => fetch(`http://localhost:5000/houses/${params.id}`)
             },
             {
                 path: "addHouse",
